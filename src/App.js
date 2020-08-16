@@ -1,30 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
+
+
+//components
+import InputTodo from './components/InputTodo'
+import ListTodos from './components/ListTodos'
+
+
 
 function App() {
   axios.get('/api').then((res) => {
     console.log(res.data);
   });
-  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header">
+          To <span className="App-logo">🦄</span> do
+        </header>
+      </div>
+      <div className="container">
+        <InputTodo />
+        <ListTodos />
+      </div>
+    </>
   );
 }
 
