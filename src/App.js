@@ -10,9 +10,6 @@ import ListTodos from './components/ListTodos'
 
 
 function App() {
-  axios.get('/api').then((res) => {
-    console.log(res.data);
-  });
 
   return (
     <>
