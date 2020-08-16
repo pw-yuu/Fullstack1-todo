@@ -2,8 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const db = require('./knex')
+const path = require('path');
 
-app.use(express.static(__dirname + "dist"));
+app.use(express.static(path.resolve(__dirname + "dist")));
 
 const PORT = process.env.PORT || 4000
 
