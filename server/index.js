@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const db = require('./knex')
@@ -11,10 +12,6 @@ app.use(express.json());
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
-})
-
-app.use('/api', (req, res) => {
-    res.send('Hey 🦄')
 })
 
 app.get('/todos', async (req, res) => {
